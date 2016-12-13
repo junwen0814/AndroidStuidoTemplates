@@ -1,0 +1,2 @@
+# AndroidStuidoTemplates
+AndroidStuidoTemplates两个文件，CustomActivity是新建模版时用的，Test是简书中的模版说明的Demo
