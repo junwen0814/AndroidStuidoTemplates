@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="新建Activity"
+    minApi="9"
+    minBuildApi="14"
+    description="新建Activity">
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <!--类名三类： 第一类 是Activity 第二类 是Presenter 第三类 是View-->
+    <parameter
+        id="activityClass"
+        name="Activity类名"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${layoutToActivity(layoutName)}"
+        default="MainActivity" />
+
+    <parameter
+        id="layoutName"
+        name="Activity布局文件名字"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_main"
+        help="这里可以输入布局名字" />
+
+    <parameter
+        id="packageName"
+        name="包名"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter
+        id="isLauncher"
+        name="启动页"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+    <!-- 128x128 thumbnails relative to template.xml -->
+
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

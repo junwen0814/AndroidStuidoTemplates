@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="新项目模版"
+    minApi="9"
+    minBuildApi="14"
+    description="创建一个新项目模版">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="activityClass"
+        name="类名"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${layoutToActivity(layoutName)}"
+        default="MainActivity"
+        help="这里可以输入你想生成的类名" />
+
+
+    <parameter
+        id="layoutName"
+        name="布局名字"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_main"
+        visibility="generateLayout"
+        help="这里可以输入布局名字" />
+
+
+    <parameter
+        id="isLauncher"
+        name="启动页"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="packageName"
+        name="包名"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter
+        id="isLauncher"
+        name="启动页"
+        type="boolean"
+        default="true"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="isButterknife"
+        name="控件绑定"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isStatusBarCompat"
+        name="沉浸式"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isRecovery"
+        name="捕获异常"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isDesign"
+        name="Design控件"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isCardview"
+        name="CardView卡片"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isGlide"
+        name="Glide图片加载"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isRvadapter"
+        name="万能RecyclewView适配器"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isXRecyclerview"
+        name="XRecyclewView列表"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isKlog"
+        name="Klog日志库"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isSublimepickerlibrary"
+        name="Material日期选择器"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isSwitchbutton"
+        name="开关切换控件"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isBottomdialog"
+        name="至下往上自定义弹窗"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isChangeskin"
+        name="应用换肤"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isEventbus"
+        name="EventBus总线"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isFastjson"
+        name="FastJson（Json解析）"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isZxing"
+        name="Zxing二维码扫描库"
+        type="boolean"
+        default="false" />
+
+    <parameter
+        id="isLiteOrm"
+        name="LiteOrm数据库"
+        type="boolean"
+        default="false" />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
